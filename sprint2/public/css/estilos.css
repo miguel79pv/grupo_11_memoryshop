@@ -1,0 +1,19 @@
+header {
+    background-color: #112272;
+    
+}
+.header-contenedor {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.nav ul{
+    list-style: none;
+    
+}
+.nav a {
+    text-decoration: none;    
+}
+.botones a {
+    text-decoration: none;
+}
