@@ -13,6 +13,7 @@ header {
     padding-right: 20px;
 }
 .header-logo {
+    display: flex;
     width: 200px;
 }
 .logo {
@@ -56,17 +57,39 @@ header {
     padding-right: 5px;   
 }
 
-.hamburguer-button {
+.menu-button {
     /* background-color: #4486DB; */
     /* color: #fff; */
     background-color: #fff;
-    display: block;
+    /*display: flex;*/
     max-width: 50px;
-    padding: 15px 0;
+    padding: 10px 0;
     border-radius: 25px;
     text-align: center;
     font-size: 17px;
-    margin: auto;
+    /*margin: auto;*/
+    width: 50px;
+}
+.search {
+    display: none;
+}
+.search1 {
+    /*background-color: violet;*/
+    text-align: center;
+}
+.sesion {
+    display: flex;
+    color: white;
+}
+.sesion a {
+    color: #fff;
+}
+.carrito {
+    display: flex;
+    color: white;
+}
+.carrito a {
+    color: #fff;
 }
 .promo {
   
@@ -167,7 +190,19 @@ footer p {
 }
 
 @media (min-width: 768px){
-    .hamburguer-button {
+    .menu-button {
+        display: none;
+    }
+    .carrito {
+        display: none;
+    }
+    .sesion {
+        display: none;
+    }
+    .search {
+        display: flex;
+    }
+    .search1 {
         display: none;
     }
     .header-nav {
