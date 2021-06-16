@@ -1,0 +1,99 @@
+<%- include('partials/head.ejs') %>
+    <%- include('partials/header.ejs') %>
+    <main>
+        <div class="promo">
+            <img src="/images/promo1.png" class="img-promo">
+        </div>
+        <div class="login">
+            <div class="titulo-login">Registro</div>
+        </div>
+        <% if (locals.errors) { %>
+            <% for ( let oneError in errors ) { %>
+                <p><%= errors[oneError].msg %></p>
+            <% }%>    
+        <% } %>
+        <div class="registro-container">
+            <form method="POST" action="/users/register" enctype="multipart/form-data" class="register">
+                <div class="elementos">
+                    <div class="elemento-nombre">
+                        <label class="label-form">Nombre:</label>
+                        <br>
+                        <input 
+                            class="input-form name <%= locals.error && errors.first_name ? 'is-invalid' : null %>"
+                            type="text" name="first_name"
+                            value="<%= locals.oldData ? oldData.first_name : null %>"
+                        >
+                        <% if (locals.errors && errors.first_name) { %>
+                            <p><%= errors.first_name.msg%> </p>
+                        <% } %>
+                    </div>
+                    <div class="elemento-apellido-paterno">
+                        <label class="label-form">Apellido Paterno:</label>
+                        <br>
+                        <input 
+                            class="input-form last_name <%= locals.error && errors.last_name ? 'is-invalid' : null %>" 
+                            type="text" 
+                            name="last_name"
+                            value="<%= locals.oldData ? oldData.last_name : null %>"
+                        >
+                        <% if (locals.errors && errors.last_name) { %>
+                            <p><%= errors.last_name.msg%> </p>
+                        <% } %>
+                    </div>
+                    <div class="elemento-email">
+                        <label class="label-form" for="email">Correo electrónico:</label>
+                        <br>
+                        <input 
+                            class="input-form email <%= locals.error && errors.email ? 'is-invalid' : null %>" 
+                            type="email" 
+                            name="email"
+                            value="<%= locals.oldData ? oldData.email : null %>"
+                        >
+                        <% if (locals.errors && errors.email) { %>
+                            <p><%= errors.email.msg%> </p>
+                        <% } %>
+                    </div>
+                    <div class="elemento-foto-perfil">
+                        <label class="label-form" for="foto-perfil">Foto de Perfil:</label>
+                        <br>
+                        <input 
+                            class="input-form img <%= locals.error && errors.userImage ? 'is-invalid' : null %>" 
+                            type="file" 
+                            name="userImage"
+                        >
+                        <% if (locals.errors && errors.userImage) { %>
+                            <p><%= errors.userImage.msg%> </p>
+                        <% } %>
+                    </div>
+                    <div class="elemento-password">
+                        <label class="label-form" for="password">Contraseña:</label>
+                        <br>
+                        <input 
+                            class="input-form password <%= locals.error && errors.password ? 'is-invalid' : null %>" 
+                            type="password" 
+                            name="password"
+                            value="<%= locals.oldData ? oldData.password : null %>"
+                        >
+                        <% if (locals.errors && errors.password) { %>
+                            <p><%= errors.password.msg%> </p>
+                        <% } %>
+                    </div>
+                    <div class="elemento-password-confirmacion">
+                        <label class="label-form" for="password">Confirmar Contraseña:</label>
+                        <br>
+                        <input class="input-form" type="password">
+                    </div>
+                    <div class="elemento-boton">
+                        <button type="submit" class="button-form">Crear Cuenta</button>
+                    </div>
+                </div>
+            </form> 
+                 
+        </div>
+        <div class="errores">
+            <ul></ul>
+        </div> 
+
+    </main>
+    <script src="/javascripts/frontRegister.js"></script>
+<%- include('partials/footer.ejs') %>

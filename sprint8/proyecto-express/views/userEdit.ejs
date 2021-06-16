@@ -1,0 +1,77 @@
+<%- include('partials/head.ejs') %>
+    <%- include('partials/header.ejs') %>
+    <main>
+        <div class="promo">
+            <img src="/images/promo1.png" class="img-promo">
+        </div>
+        <div class="login">
+            <div class="titulo-login">Registro</div>
+        </div>
+        <% if (locals.errors) { %>
+            <% for ( let oneError in errors ) { %>
+                <p><%= errors[oneError].msg %></p>
+            <% }%>    
+        <% } %>
+        <div class="registro-container">
+            <form method="POST" action="/users/<%= locals.oldData ? oldData.iduser : userToEdit.iduser %>?_method=PUT" enctype="multipart/form-data">
+                <div class="elementos">
+                    <div class="elemento-nombre">
+                        <label class="label-form">Nombre:</label>
+                        <br>
+                        <input 
+                            class="input-form <%= locals.error && errors.first_name ? 'is-invalid' : null %>"
+                            type="text" name="first_name"
+                            value="<%= locals.oldData ? oldData.first_name : userToEdit.first_name %>"
+                        >
+                        <% if (locals.errors && errors.first_name) { %>
+                            <p><%= errors.first_name.msg%> </p>
+                        <% } %>
+                    </div>
+                    <div class="elemento-apellido-paterno">
+                        <label class="label-form">Apellido Paterno:</label>
+                        <br>
+                        <input 
+                            class="input-form <%= locals.error && errors.last_name ? 'is-invalid' : null %>" 
+                            type="text" 
+                            name="last_name"
+                            value="<%= locals.oldData ? oldData.last_name : userToEdit.last_name %>"
+                        >
+                        <% if (locals.errors && errors.last_name) { %>
+                            <p><%= errors.last_name.msg%> </p>
+                        <% } %>
+                    </div>
+                    <div class="elemento-email">
+                        <label class="label-form" for="email">Correo electrónico:</label>
+                        <br>
+                        <input 
+                            class="input-form <%= locals.error && errors.email ? 'is-invalid' : null %>" 
+                            type="email" 
+                            name="email"
+                            value="<%= locals.oldData ? oldData.email : userToEdit.email %>"
+                        >
+                        <% if (locals.errors && errors.email) { %>
+                            <p><%= errors.email.msg%> </p>
+                        <% } %>
+                    </div>
+                    <div class="elemento-foto-perfil">
+                        <label class="label-form" for="foto-perfil">Foto de Perfil:</label>
+                        <br>
+                        <input 
+                            class="input-form <%= locals.error && errors.userImage ? 'is-invalid' : null %>" 
+                            type="file" 
+                            name="userImage"
+                        >
+                        <% if (locals.errors && errors.userImage) { %>
+                            <p><%= errors.userImage.msg%> </p>
+                        <% } %>
+                    </div>
+                    
+                    <div class="elemento-boton">
+                        <button type="submit" class="button-form">Actualizar</button>
+                    </div>
+                </div>
+            </form>       
+        </div>
+
+    </main>
+<%- include('partials/footer.ejs') %>

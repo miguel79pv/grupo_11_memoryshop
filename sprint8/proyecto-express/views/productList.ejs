@@ -1,0 +1,35 @@
+<%- include('partials/head.ejs') %>
+<%- include('partials/header.ejs') %>
+
+<main> 
+    <div class="titulo-detalle">Listado de Productos <%= title %></div>
+    <div class="productos">
+        <% for (let i=0; i<articulos.length; i++ ) { %>
+            <div class="producto">
+                <a href="/products/<%= articulos[i].idproducto %>">
+                <div class="producto-titulo"> <%= articulos[i].nombre %> </div>
+                <img src="../images/<%= articulos[i].foto %>" class="img-producto">
+                <div class="producto-detalles">
+                    <div class="producto-descripcion"><%= articulos[i].descripcion %> </div>                
+                    <div class="producto-SKU">SKU: <%= articulos[i].sku %></div>
+                    <div class="producto-precio">Precio: <%= articulos[i].precio %></div>
+                </div>
+                </a>
+            </div> 
+    
+        <% } %>
+        
+    </div>
+    <% if (locals.isLogged) { %>
+    <div class="header-nav">
+        <ul class="nav-main">
+            <li><a href="/products/creacion">CREACIÓN</a></li>
+        </ul>
+    </div>
+    <% } %>
+
+</main>
+
+
+
+<%- include('partials/footer.ejs') %>

@@ -1,0 +1,31 @@
+<%- include('partials/head.ejs') %>
+    <%- include('partials/header.ejs') %>
+    <main>
+        <div class="promo">
+            <img src="/images/promo1.png" class="img-promo">
+        </div>
+        <div class="login">
+            <div class="titulo-login">Login</div>
+        </div>
+        <div class="login-container">
+            <form method="POST" action="/user/login">
+                <label class="label-form" for="email">Correo</label>
+                <br>
+                <input class="input-form" type="email" name="email">
+                <% if (locals.errors && errors.email) {%>
+                    <p><%= errors.email.msg %></p>
+                <% } %>
+                <br>
+                <label class="label-form" for="password">Contraseña:</label>
+                <br>
+                <input class="input-form" type="password" name="password">
+                <br>
+                <label>
+                    <input type="checkbox" name="remember_user">Recordar mi usuario
+                </label>
+                <button type="submit" class="button-form">Iniciar Sesión</button>
+            </form>       
+        </div>
+
+    </main>
+<%- include('partials/footer.ejs') %>

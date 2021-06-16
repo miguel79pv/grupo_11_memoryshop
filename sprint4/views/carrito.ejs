@@ -1,0 +1,29 @@
+<%- include('partials/head.ejs') %>
+    <%- include('partials/header.ejs') %>
+    <main>
+        <div class="promo">
+            <img src="/images/promo1.png" class="img-promo">
+        </div>
+        <div class="carrito">
+            <div class="titulo-carrito">Carrito de Compras</div>
+            <div class="contenedor-carrito">
+                <div class="img-carrito">
+                    <img src="/images/ADATA-FLASH-32G.jpg" class="imagen-detalle">
+                    
+                </div>
+                <div class="informacion-carrito">
+                    <div class="nombre-carrito">Memoria flash ADATA de 32G</div>
+                    <div class="SKU-carrito">SKU: ADF32GBS</div>
+                    <div class="precio-carrito">Precio: 149.90</div>
+                    <div class="costo-envio-carrito">Costo de envío: 99.90</div>
+                    <div class="cantidad-cantidad">Cantidad:<input class="input-carrito" type="text"></div>
+                    <button type="submit" class="button-eliminar">Elminar</button>                    
+                    <div class="subtotal-carrito">Subtotal: 6,000.00</div>
+                    <div class="total-carrito">Total:6,099.90</div>
+                </div>
+            </div>
+            <button type="submit" class="button-pagar">PAGAR</button>
+        </div>
+
+    </main>
+<%- include('partials/footer.ejs') %>

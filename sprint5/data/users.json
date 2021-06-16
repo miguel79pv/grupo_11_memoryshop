@@ -1,0 +1,20 @@
+[
+ {
+  "id": 1,
+  "nombre": "Miguel",
+  "apellidoPaterno": "Pérez",
+  "apellidoMaterno": "Pérez",
+  "email": "miguel@miguel.com",
+  "password": "$2a$10$KaHBcxu2vqMVUiJLNXXnVekCUkqInAHBZqWwmNDFtV.n5TkRe3oce",
+  "avatar": "1622350001396_img.jpg"
+ },
+ {
+  "id": 2,
+  "nombre": "Alejandro",
+  "apellidoPaterno": "Lopez",
+  "apellidoMaterno": "Lopez",
+  "email": "alejandro@alejandro.com",
+  "password": "$2a$10$EoeHc9pnTwjLDlpk93BL4.wHJKmTYk2Mk/dHeCDJYqMODmi/c5X8G",
+  "avatar": "1622416696996_img.jpg"
+ }
+]

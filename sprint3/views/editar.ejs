@@ -1,0 +1,60 @@
+<%- include('partials/head.ejs') %>
+    <%- include('partials/header.ejs') %>
+    <main>
+        <div class="promo">
+            <img src="/images/promo1.png" class="img-promo">
+        </div>
+        <div class="login">
+            <div class="titulo-login">Editar Producto</div>
+        </div>
+        <div class="login-container">
+            <form>
+                <label class="label-form" for="titulo">Título</label>
+                <br>
+                <input class="input-form" id="titulo" type="text" value="Western Digital WDSD120G1G0A">
+                <br>
+                <label class="label-form" for="sku">SKU</label>
+                <br>
+                <input class="input-form" id="sku" type="text" value="WD120GBS">
+                <br>
+                <label class="label-form" for="precio">Precio</label>
+                <br>
+                <input class="input-form" id="precio" type="text" value="1,500.00">
+                <br>
+                <label class="label-form" for="foto">Foto</label>
+                <br>
+                <img src="/images/WD-SSD-120GB.jpg" class="img-producto">
+                <input class="input-form" id="foto" type="file">
+                <br>
+                <label class="label-form" for="descripcion">Descripción</label>
+                <br>
+                <textarea name="textarea" rows="5" cols="30">SSD Western Digital Green, 120GB, SATA III, 2.5'' </textarea>
+                <br>
+                <h2>Características</h2>
+                <label class="label-form" for="color">Color:</label>
+                
+                <input class="input-form" id="color" type="text" value="Negro">
+                <br>
+                <label class="label-form" for="capacidad">Capacidad:</label>
+                
+                <input class="input-form" id="capacidad" type="text" value="120 GB">
+                <br>
+                <label class="label-form" for="marca">Marca:</label>
+                <br>
+                <input class="input-form" id="marca" type="text" value="Western Digital">
+                <br>
+                <label class="label-form" for="velocidad">Vel. de lectura:</label>
+                <br>
+                <input class="input-form" id="velocidad" type="text" value="300 mbps">
+                <br>
+                <label class="label-form" for="tipo">Tipo:</label>
+                <br>
+                <input class="input-form" id="tipo" type="text" value="SSD">
+                <br>
+
+                <button type="submit" class="button-form">Crear</button>
+            </form>       
+        </div>
+
+    </main>
+<%- include('partials/footer.ejs') %>

@@ -1,0 +1,78 @@
+<%- include('partials/head.ejs') %>
+    <%- include('partials/header.ejs') %>
+    <main>
+        <div class="promo">
+            <img src="/images/promo1.png" class="img-promo">
+        </div>
+        <% if (locals.errors) { %>
+            <% for ( let oneError in errors ) { %>
+                <p><%= errors[oneError].msg %></p>
+            <% }%>    
+        <% } %>
+        <div class="login">
+            <div class="titulo-login">Editando Producto <%= productToEdit.nombre %></div>
+        </div>
+        <div class="login-container">
+            <form method="POST" action="/products/<%= productToEdit.idproducto %>?_method=PUT" enctype="multipart/form-data">
+                <label class="label-form" name="titulo">Título</label>
+                <br>
+                <input class="input-form" name="titulo" type="text" value="<%= productToEdit.nombre %>">
+                <br>
+                <label class="label-form" for="sku">SKU</label>
+                <br>
+                <input class="input-form" name="sku" type="text" value="<%= productToEdit.sku %>">
+                <br>
+                <label class="label-form" for="precio">Precio</label>
+                <br>
+                <input class="input-form" name="precio" type="text" value="<%= productToEdit.precio %>">
+                <br>
+                <label class="label-form" for="foto">Foto</label>
+                <br>
+                <img src="/images/<%= productToEdit.foto %>" class="img-producto">
+                <input class="input-form" name="foto" type="file">
+                <br>
+                <label class="label-form" for="descripcion">Descripción</label>
+                <br>
+                <textarea name="descripcion" rows="5" cols="30"><%= productToEdit.descripcion %></textarea>
+                <br>
+                <h2>Características</h2>                
+                <br>
+                <label class="label-form" for="marca">Marca:</label>
+                <br>
+                <select name="marca" class="input-form">                    
+                    <% for (i=0; i < marcas.length; i++) { %> 
+                        <% if(marcas[i] == productToEdit.id_marca) { %>
+                            <option value="<%= marcas[i].idmarcas %>" selected>
+                                <%= marcas[i].nombre %>                            
+                            </option>
+                            <% } else { %>
+                                <option value="<%= marcas[i].idmarcas %>">
+                                    <%= marcas[i].nombre %>                            
+                                </option>
+                            <% } %>
+                        
+                    <% } %>
+                </select>
+                <br>
+                <select name="tipo" class="input-form">                    
+                    <% for (i=0; i < tipos.length; i++) { %> 
+                        <% if(tipos[i] == productToEdit.id_type) { %>
+                            <option value="<%= tipos[i].idtipomemoria %>" selected>
+                                <%= tipos[i].nombre %>                            
+                            </option>
+                            <% } else { %>
+                                <option value="<%= tipos[i].idtipomemoria %>">
+                                    <%= tipos[i].nombre %>                            
+                                </option>
+                            <% } %>
+                        
+                    <% } %>
+                </select>
+                <br>
+                <button type="submit" class="">Actualizar</button>
+                
+            </form>               
+        </div>
+
+    </main>
+<%- include('partials/footer.ejs') %>

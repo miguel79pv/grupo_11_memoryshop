@@ -1,0 +1,67 @@
+<%- include('partials/head.ejs') %>
+    <%- include('partials/header.ejs') %>
+    <main>
+        <div class="promo">
+            <img src="/images/promo1.png" class="img-promo">
+        </div>
+        <div class="login">
+            <div class="titulo-login">Crear Producto</div>
+        </div>
+        <% if(locals.errors) {
+            errors.forEach(error => { %>
+            <p><%= error.msg %></p>
+        <% })
+        } %>
+        <div class="login-container">
+            <form method="POST" action="/products" enctype="multipart/form-data" class="producto">
+                <label class="label-form" name="titulo">Título</label>
+                <br>
+                <input class="input-form titulo" name="titulo" type="text" value="<%= locals.old && old.titulo ? old.titulo : '' %>">
+                <br>
+                <label class="label-form" for="sku">SKU</label>
+                <br>
+                <input class="input-form sku" name="sku" type="text" value="<%= locals.old && old.sku ? old.sku : '' %>">
+                <br>
+                <label class="label-form" for="precio">Precio</label>
+                <br>
+                <input class="input-form precio" name="precio" type="text" value="<%= locals.old && old.precio ? old.precio : '' %>">
+                <br>
+                <label class="label-form" for="foto">Imagen del producto</label>
+                <br>
+                <input class="input-form img" name="foto" type="file">
+                <br>
+                <label class="label-form" for="descripcion">Descripción</label>
+                <br>
+                <textarea class="descripcion" name="descripcion" rows="5" cols="30"><%= locals.old && old.descripcion ? old.descripcion : ''; %>"</textarea>
+                <br>
+                <h2>Características</h2>                
+                <label class="label-form" for="marca">Marca:</label>
+                <br>
+                <select name="marca" class="input-form">
+                    <% for (i=0; i < marcas.length; i++) { %> 
+                        <option value="<%= marcas[i].idmarcas %>">
+                            <%= marcas[i].nombre %>                            
+                        </option>
+                    <% } %>
+                </select>
+                <br>
+                <label class="label-form" for="marca">Tipo:</label>
+                <br>
+                <select name="tipo" class="input-form">
+                    <% for (i=0; i < tipos.length; i++) { %> 
+                        <option value="<%= tipos[i].idtipomemoria %>">
+                            <%= tipos[i].nombre %>                            
+                        </option>
+                    <% } %>
+                </select>
+                <br>
+
+                <button type="submit" class="">Crear</button>
+            </form>       
+        </div>
+        <div class="errores">
+            <ul></ul>
+        </div> 
+    </main>
+    <script src="/javascripts/frontProduct.js"></script>
+<%- include('partials/footer.ejs') %>

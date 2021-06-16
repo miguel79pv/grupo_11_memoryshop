@@ -1,0 +1,16 @@
+<%- include('partials/head.ejs') %>
+    <%- include('partials/header.ejs') %>
+	
+	<!-- Container -->
+	<div class="container-user-profile">
+		<div class="img-user-profile">
+			<img src="/images/avatars/<%= user.image %>">
+		</div>
+		<div class="info-user-profile">
+			<div class="nombre-user-profile">Nombre: <%= user.first_name %> <%= user.last_name%></div>
+			<div class="email-user-profile">Correo Electrónico: <%= user.email%></div>
+			<div class="category-user-profile">Categoría: <%= user.category.nombre%></div> 
+		</div>		
+	</div>
+	<!-- //Container -->
+	<%- include('partials/footer.ejs') %>

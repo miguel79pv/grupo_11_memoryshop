@@ -1,0 +1,46 @@
+<%- include('partials/head.ejs') %>
+    <%- include('partials/header.ejs') %>
+    <main>
+        <div class="promo">
+            <img src="/images/promo1.png" class="img-promo">
+        </div>
+        <div class="producto-detalle">
+            <div class="titulo-detalle">Detalle de Producto</div>
+            <div class="contenedor-carrito">
+                <div class="img-detalle">
+                    <img src="/images/<%= producto.foto %>" class="imagen-detalle">
+                </div>
+                <div class="informacion-detalle">
+                    <div class="nombre-detalle"><%= producto.nombre %></div>
+                    <div class="SKU-detalle">SKU: <%= producto.sku %></div>            
+                    <div class="descripcion-detalle"> <%= producto.descripcion %> </div>
+                    <div class="precio-detalle">Precio: <%= producto.precio %></div>
+                    <div class="costo-envio-detalle">Costo de envío: 99.90</div>
+                    <button type="submit" class="button-agregar">Agregar al Carrito</button>
+                    <div class="caracteristicas-detalle">
+                        <div class="caracteristicas-detalle-titulo">Características</div>
+                        <div class="caracteristicas-detalle-característica"><strong>Marca:</strong> <%= producto.marcas.nombre %></div>
+                        <div class="caracteristicas-detalle-característica"><strong>Tipo de memoria:</strong> <%= producto.tipos.nombre %></div>
+                    </div>
+                    <% if (locals.isLogged) { %>
+                        <div class="botones-user-profile">
+                            <div class="boton-editar">
+                                <a href="/products/<%= producto.idproducto %>/edicion">
+                                    <button class="boton-user-editar" type="submit">
+                                        EDITAR
+                                    </button>
+                                </a>
+                            </div>
+                            <div class="boton-eliminar">
+                                <form method="POST" action="/products/<%= producto.idproducto %>?_method=DELETE">
+                                    <button class="boton-user-eliminar" type="submit">ELIMINAR</button>
+                                </form> 
+                            </div>
+                    </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+
+    </main>
+<%- include('partials/footer.ejs') %>

@@ -1,0 +1,108 @@
+<%- include('partials/head.ejs') %>
+    <%- include('partials/header.ejs') %>
+    <main>
+        <div class="promo">
+            <img src="/images/promo1.png" class="img-promo">
+        </div>
+        <div class="login">
+            <div class="titulo-login">Registro</div>
+        </div>
+        <% if (locals.errors) { %>
+            <% for ( let oneError in errors ) { %>
+                <p><%= errors[oneError].msg %></p>
+            <% }%>    
+        <% } %>
+        <div class="registro-container">
+            <form method="POST" action="/user/register" enctype="multipart/form-data">
+                <div class="elementos">
+                    <div class="elemento-nombre">
+                        <label class="label-form">Nombre:</label>
+                        <br>
+                        <input 
+                            class="input-form"
+                            type="text" name="nombre"
+                            value="<%= locals.oldData ? oldData.nombre : null %>"
+                        >
+                        <% if (locals.errors && errors.nombre) { %>
+                            <p><%= errors.nombre.msg%> </p>
+                        <% } %>
+                    </div>
+                    <div class="elemento-apellido-paterno">
+                        <label class="label-form">Apellido Paterno:</label>
+                        <br>
+                        <input 
+                            class="input-form" 
+                            type="text" 
+                            name="apellidoPaterno"
+                            value="<%= locals.oldData ? oldData.apellidoPaterno : null %>"
+                        >
+                        <% if (locals.errors && errors.apellidoPaterno) { %>
+                            <p><%= errors.apellidoPaterno.msg%> </p>
+                        <% } %>
+                    </div>
+                    <div class="elemento-apellido-materno">
+                        <label class="label-form" for="apellido-materno">Apellido Materno:</label>
+                        <br>
+                        <input 
+                            class="input-form"
+                            type="text" 
+                            name="apellidoMaterno"
+                            value="<%= locals.oldData ? oldData.apellidoMaterno : null %>"
+                        >
+                        <% if (locals.errors && errors.apellidoMaterno) { %>
+                            <p><%= errors.apellidoMaterno.msg%> </p>
+                        <% } %>
+                    </div>
+                    <div class="elemento-email">
+                        <label class="label-form" for="email">Correo electrónico:</label>
+                        <br>
+                        <input 
+                            class="input-form" 
+                            type="email" 
+                            name="email"
+                            value="<%= locals.oldData ? oldData.email : null %>"
+                        >
+                        <% if (locals.errors && errors.email) { %>
+                            <p><%= errors.email.msg%> </p>
+                        <% } %>
+                    </div>
+                    <div class="elemento-fecha-nacimiento">
+                        <label class="label-form" for="fecha-nacimiento">Fecha de Nacimiento:</label>
+                        <br>
+                        <input class="input-form" type="date">
+                    </div>
+                    <div class="elemento-foto-perfil">
+                        <label class="label-form" for="foto-perfil">Foto de Perfil:</label>
+                        <br>
+                        <input class="input-form" type="file" name="userImage">
+                        <% if (locals.errors && errors.userImage) { %>
+                            <p><%= errors.userImage.msg%> </p>
+                        <% } %>
+                    </div>
+                    <div class="elemento-password">
+                        <label class="label-form" for="password">Contraseña:</label>
+                        <br>
+                        <input 
+                            class="input-form" 
+                            type="password" 
+                            name="password"
+                            value="<%= locals.oldData ? oldData.password : null %>"
+                        >
+                        <% if (locals.errors && errors.password) { %>
+                            <p><%= errors.password.msg%> </p>
+                        <% } %>
+                    </div>
+                    <div class="elemento-password-confirmacion">
+                        <label class="label-form" for="password">Confirmar Contraseña:</label>
+                        <br>
+                        <input class="input-form" type="password">
+                    </div>
+                    <div class="elemento-boton">
+                        <button type="submit" class="button-form">Crear Cuenta</button>
+                    </div>
+                </div>
+            </form>       
+        </div>
+
+    </main>
+<%- include('partials/footer.ejs') %>

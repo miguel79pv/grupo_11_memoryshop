@@ -1,0 +1,32 @@
+<%- include('partials/head.ejs') %>
+<%- include('partials/header.ejs') %>
+
+<main> 
+    <div class="titulo-usuarios">Listado de Usuarios</div>
+    <div class="usuarios">
+        <% for (let i=0; i<users.length; i++ ) { %>
+            <div class="usuario">                
+                    <div class="img-usuario">
+                        <a href="/users/<%= users[i].iduser %>">
+                            <img src="../images/avatars/<%= users[i].image %>" class="imgRedonda">
+                        </a>
+                    </div>
+                    <div class="usuario-detalles">
+                        <div class="usuario-nombre"> <%= users[i].first_name %> <%= users[i].last_name %> | <%= users[i].email %></div>
+                        <div class="usuario-email">Email: </div>
+                    </div>                
+            </div>     
+        <% } %>
+        
+    </div>
+    <div class="header-nav">
+        <ul class="nav-main">
+            <li><a href="/products/creacion">CREACIÓN</a></li>
+        </ul>
+    </div>
+
+</main>
+
+
+
+<%- include('partials/footer.ejs') %>

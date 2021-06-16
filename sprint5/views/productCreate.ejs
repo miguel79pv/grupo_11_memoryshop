@@ -1,0 +1,64 @@
+<%- include('partials/head.ejs') %>
+    <%- include('partials/header.ejs') %>
+    <main>
+        <div class="promo">
+            <img src="/images/promo1.png" class="img-promo">
+        </div>
+        <div class="login">
+            <div class="titulo-login">Crear Producto</div>
+        </div>
+        <% if(locals.errors) {
+            errors.forEach(error => { %>
+            <p><%= error.msg %></p>
+        <% })
+        } %>
+        <div class="login-container">
+            <form method="POST" action="/products" enctype="multipart/form-data">
+                <label class="label-form" name="titulo">Título</label>
+                <br>
+                <input class="input-form" name="titulo" type="text" value="<%= locals.old && old.titulo ? old.titulo : '' %>">
+                <br>
+                <label class="label-form" for="sku">SKU</label>
+                <br>
+                <input class="input-form" name="sku" type="text" value="<%= locals.old && old.sku ? old.sku : '' %>">
+                <br>
+                <label class="label-form" for="precio">Precio</label>
+                <br>
+                <input class="input-form" name="precio" type="text" value="<%= locals.old && old.precio ? old.precio : '' %>">
+                <br>
+                <label class="label-form" for="foto">Imagen del producto</label>
+                <br>
+                <input class="input-form" name="foto" type="file">
+                <br>
+                <label class="label-form" for="descripcion">Descripción</label>
+                <br>
+                <textarea name="descripcion" rows="5" cols="30"><%= locals.old && old.descripcion ? old.descripcion : ''; %>"</textarea>
+                <br>
+                <h2>Características</h2>
+                <label class="label-form" for="color">Color:</label>
+                
+                <input class="input-form" name="color" type="text" value="<%= locals.old && old.color ? old.color : '' %>">
+                <br>
+                <label class="label-form" for="capacidad">Capacidad:</label>
+                
+                <input class="input-form" name="capacidad" type="text">
+                <br>
+                <label class="label-form" for="marca">Marca:</label>
+                <br>
+                <input class="input-form" name="marca" type="text">
+                <br>
+                <label class="label-form" for="velocidad">Vel. de lectura:</label>
+                <br>
+                <input class="input-form" name="velocidad" type="text">
+                <br>
+                <label class="label-form" for="tipo">Tipo:</label>
+                <br>
+                <input class="input-form" name="tipo" type="text">
+                <br>
+
+                <button type="submit" class="">Crear</button>
+            </form>       
+        </div>
+
+    </main>
+<%- include('partials/footer.ejs') %>

@@ -1,0 +1,24 @@
+<%- include('partials/head.ejs') %>
+    <%- include('partials/header.ejs') %>
+    <main>
+        <div class="promo">
+            <img src="/images/promo1.png" class="img-promo">
+        </div>
+        <div class="login">
+            <div class="titulo-login">Login</div>
+        </div>
+        <div class="login-container">
+            <form>
+                <label class="label-form" for="email">Correo</label>
+                <br>
+                <input class="input-form" type="email">
+                <br>
+                <label class="label-form" for="password">Contraseña:</label>
+                <br>
+                <input class="input-form" type="password">
+                <button type="submit" class="button-form">Iniciar Sesión</button>
+            </form>       
+        </div>
+
+    </main>
+<%- include('partials/footer.ejs') %>

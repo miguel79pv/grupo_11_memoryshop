@@ -1,0 +1,29 @@
+<%- include('partials/head.ejs') %>
+    <%- include('partials/header.ejs') %>
+    <main> 
+        <div class="promo">
+            <img src="/images/promo1.png" class="img-promo">
+        </div>
+        <div class="productos">
+            <% for (let i=0; i<articulos.length; i++ ) { %>
+                <div class="producto">
+                    <div class="producto-titulo"> <%= articulos[i].titulo %> </div>
+                    <img src="/images/<%= articulos[i].foto %>" class="img-producto">
+                    <div class="producto-detalles">
+                        <div class="producto-descripcion"><%= articulos[i].descripcion %> </div>                
+                        <div class="producto-SKU">SKU: <%= articulos[i].sku %></div>
+                        <div class="producto-precio">Precio: <%= articulos[i].precio %></div>
+                    </div>
+                </div> 
+        
+            <% } %>
+            
+        </div>
+
+    </main>
+
+<%- include('partials/footer.ejs') %>
+
+    
+    
+

@@ -1,0 +1,29 @@
+<%- include('partials/head.ejs') %>
+<%- include('partials/header.ejs') %>
+<!-- Container -->
+<main>
+	<div class="titulo-detalle">Detalle de Usuario</div>
+	<div class="container-user-profile">
+	<img src="/images/avatars/<%= user.image %>" class="img-user-profile">
+	<div class="info-user-profile">
+		<div class="nombre-user-profile"><strong>Nombre:</strong> <br> <%= user.first_name %> <%= user.last_name%></div>
+		<div class="email-user-profile"><strong>Email:</strong> <br> <%= user.email%></div>
+		<div class="category-user-profile"><strong>Categoría: <br> </strong><%= user.categorias.name%></div> 
+		<div class="botones-user-profile">
+			<div class="boton-editar">
+			<a href="/users/<%= user.iduser %>/edicion">
+				<button class="boton-user-editar" type="submit">
+					EDITAR
+				</button>
+			</a>
+			</div>
+			<div class="boton-eliminar">
+				<form method="POST" action="/users/<%= user.iduser %>?_method=DELETE">
+					<button class="boton-user-eliminar" type="submit">ELIMINAR</button>
+				</form> 
+			</div>
+		</div>	
+	</div>	
+</main>
+<!-- //Container -->
+<%- include('partials/footer.ejs') %>

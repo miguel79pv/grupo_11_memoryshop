@@ -1,0 +1,63 @@
+<%- include('partials/head.ejs') %>
+    <%- include('partials/header.ejs') %>
+    <main>
+        <div class="promo">
+            <img src="/images/promo1.png" class="img-promo">
+        </div>
+        <div class="login">
+            <div class="titulo-login">Editando Producto <%= productToEdit.titulo %></div>
+        </div>
+        <div class="login-container">
+            <form method="POST" action="/products/<%= productToEdit.id %>?_method=PUT" enctype="multipart/form-data">
+                <label class="label-form" name="titulo">Título</label>
+                <br>
+                <input class="input-form" name="titulo" type="text" value="<%= productToEdit.titulo %>">
+                <br>
+                <label class="label-form" for="sku">SKU</label>
+                <br>
+                <input class="input-form" name="sku" type="text" value="<%= productToEdit.sku %>">
+                <br>
+                <label class="label-form" for="precio">Precio</label>
+                <br>
+                <input class="input-form" name="precio" type="text" value="<%= productToEdit.precio %>">
+                <br>
+                <label class="label-form" for="foto">Foto</label>
+                <br>
+                <img src="/images/<%= productToEdit.foto %>" class="img-producto">
+                <input class="input-form" name="foto" type="file">
+                <br>
+                <label class="label-form" for="descripcion">Descripción</label>
+                <br>
+                <textarea name="descripcion" rows="5" cols="30"><%= productToEdit.descripcion %></textarea>
+                <br>
+                <h2>Características</h2>
+                <label class="label-form" for="color">Color:</label>
+                
+                <input class="input-form" name="color" type="text" value="<%= productToEdit.caracteristicas.color %>">
+                <br>
+                <label class="label-form" for="capacidad">Capacidad:</label>
+                
+                <input class="input-form" name="capacidad" type="text" value="<%= productToEdit.caracteristicas.capacidad %>">
+                <br>
+                <label class="label-form" for="marca">Marca:</label>
+                <br>
+                <input class="input-form" name="marca" type="text" value="<%= productToEdit.caracteristicas.marca %>">
+                <br>
+                <label class="label-form" for="velocidad">Vel. de lectura:</label>
+                <br>
+                <input class="input-form" name="velocidad" type="text" value="<%= productToEdit.caracteristicas.velocidad_lectura %>">
+                <br>
+                <label class="label-form" for="tipo">Tipo:</label>
+                <br>
+                <input class="input-form" name="tipo" type="text" value="productToEdit.caracteristicas.tipo_memoria">
+                <br>
+                <button type="submit" class="">Editar</button>
+                
+            </form>    
+            <form method="POST" action="/products/<%= productToEdit.id %>?_method=DELETE">
+                <button type="submit">Delete</button>
+            </form>   
+        </div>
+
+    </main>
+<%- include('partials/footer.ejs') %>

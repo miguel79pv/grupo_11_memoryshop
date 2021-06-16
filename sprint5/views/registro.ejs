@@ -1,0 +1,61 @@
+<%- include('partials/head.ejs') %>
+    <%- include('partials/header.ejs') %>
+    <main>
+        <div class="promo">
+            <img src="/images/promo1.png" class="img-promo">
+        </div>
+        <div class="login">
+            <div class="titulo-login">Registro</div>
+        </div>
+        <div class="registro-container">
+            <form method="POST" action="/user/register">
+                <div class="elementos">
+                    <div class="elemento-nombre">
+                        <label class="label-form" for="nombre">Nombre:</label>
+                        <br>
+                        <input class="input-form" type="text">
+                    </div>
+                    <div class="elemento-apellido-paterno">
+                        <label class="label-form" for="apellido-paterno">Apellido Paterno:</label>
+                        <br>
+                        <input class="input-form" type="text">
+                    </div>
+                    <div class="elemento-apellido-materno">
+                        <label class="label-form" for="apellido-materno">Apellido Materno:</label>
+                        <br>
+                        <input class="input-form" type="text">
+                    </div>
+                    <div class="elemento-email">
+                        <label class="label-form" for="email">Correo electrónico:</label>
+                        <br>
+                        <input class="input-form" type="email">
+                    </div>
+                    <div class="elemento-fecha-nacimiento">
+                        <label class="label-form" for="fecha-nacimiento">Fecha de Nacimiento:</label>
+                        <br>
+                        <input class="input-form" type="date">
+                    </div>
+                    <div class="elemento-foto-perfil">
+                        <label class="label-form" for="foto-perfil">Foto de Perfil:</label>
+                        <br>
+                        <input class="input-form" type="file">
+                    </div>
+                    <div class="elemento-password">
+                        <label class="label-form" for="password">Contraseña:</label>
+                        <br>
+                        <input class="input-form" type="password">
+                    </div>
+                    <div class="elemento-password-confirmacion">
+                        <label class="label-form" for="password">Confirmar Contraseña:</label>
+                        <br>
+                        <input class="input-form" type="password">
+                    </div>
+                    <div class="elemento-boton">
+                        <button type="submit" class="button-form">Crear Cuenta</button>
+                    </div>
+                </div>
+            </form>       
+        </div>
+
+    </main>
+<%- include('partials/footer.ejs') %>
