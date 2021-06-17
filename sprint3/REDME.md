@@ -11,4 +11,9 @@ Retrospectiva
 5. Dejar de hacer.
     Postergar la ejecución de las tareas.
 
+Enlace al tablero de Trello:
+
+https://trello.com/b/OYotMfFz/proyecto-digital-house
+
+
 Para el Sprint 3 se creo la estructura de motor de templates EJS, se establecieron los componentes repetidos en partials y se crearon las vistas con los formularios de creación y edición de productos.

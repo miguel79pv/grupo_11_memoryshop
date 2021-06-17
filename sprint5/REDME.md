@@ -11,4 +11,8 @@ Retrospectiva
 5. Dejar de hacer.
     Postergar la ejecución de las tareas.
 
+Enlace al tablero de Trello:
+
+https://trello.com/b/OYotMfFz/proyecto-digital-house
+
 Para el Sprint 5 se trabajó en la implementación de la entidad de usuarios (CRUD de usuarios). Se implementó la creación de usuarios con la funcionalidad de carga de fotografias con multer, además de encriptar el password con bcrypt.js. También se implementaros los diferentes Middlewares para sesiones y cookies. También la funcionalidad de recordar al usuario y la validación pararutas de huéspedes y de usuarios registrados.

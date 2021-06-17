@@ -11,5 +11,9 @@ Retrospectiva
 5. Dejar de hacer.
     Postergar la ejecución de las tareas.
 
+Enlace al tablero de Trello:
+
+https://trello.com/b/OYotMfFz/proyecto-digital-house
+
 Para el Sprint 7 se trabajó en las validaciones con Express Validator para el registro de usuarios, login de usuarios, creación y modificación de productos. 
 También se trabajó en las validaciones del front-end con JavaScript para el registro de usuarios, login de usuarios, creación y modificación de productos.

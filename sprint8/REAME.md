@@ -11,6 +11,10 @@ Retrospectiva
 5. Dejar de hacer.
     Postergar la ejecución de las tareas.
 
+Enlace al tablero de Trello:
+
+https://trello.com/b/OYotMfFz/proyecto-digital-house
+
 Para el Sprint 8 se trabajó en los endpoints API de usuarios para la respuesta de listado de usuarios, el detalle de usuarios, listado de productos, detalle de producto.
 Bajo la tecnología React, se implementó el Dashboard del sitio para consumir los endpoints (APIs) de Express.
 Listado de productos, estadísticas de la base de datos, detalle de útlimo producto creado, búsqueda por palabra y listado de marcas.
